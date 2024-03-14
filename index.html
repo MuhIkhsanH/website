@@ -62,10 +62,10 @@
       document.getElementById(`cell${row}${col}`).innerText = player;
       board[row][col] = player;
       if (checkWin(player)) {
-        alert("You win!");
+        showAlert("Anda menang!");
         resetBoard();
       } else if (checkDraw()) {
-        alert("It's a draw!");
+        showAlert("Seri!");
         resetBoard();
       } else {
         currentPlayer = enemy;
@@ -93,10 +93,10 @@
     board[move.i][move.j] = enemy;
     document.getElementById(`cell${move.i}${move.j}`).innerText = enemy;
     if (checkWin(enemy)) {
-      alert("You lose!");
+      showAlert("Anda kalah!");
       resetBoard();
     } else if (checkDraw()) {
-      alert("It's a draw!");
+      showAlert("Seri!");
       resetBoard();
     } else {
       currentPlayer = player;
@@ -175,6 +175,10 @@
     if (checkWin(enemy)) return enemy;
     if (checkDraw()) return 'draw';
     return null;
+  }
+
+  function showAlert(message) {
+    alert(message);
   }
 </script>
 </body>
