@@ -1,185 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tic Tac Toe</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  .board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 2px;
-    border: 2px solid #333;
-    background-color: #fff;
-  }
-  .cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    cursor: pointer;
-  }
-  .cell:hover {
-    background-color: #f0f0f0;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perkenalan Diri</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="board" id="board">
-  <div class="cell" onclick="handleMove(0, 0)" id="cell00"></div>
-  <div class="cell" onclick="handleMove(0, 1)" id="cell01"></div>
-  <div class="cell" onclick="handleMove(0, 2)" id="cell02"></div>
-  <div class="cell" onclick="handleMove(1, 0)" id="cell10"></div>
-  <div class="cell" onclick="handleMove(1, 1)" id="cell11"></div>
-  <div class="cell" onclick="handleMove(1, 2)" id="cell12"></div>
-  <div class="cell" onclick="handleMove(2, 0)" id="cell20"></div>
-  <div class="cell" onclick="handleMove(2, 1)" id="cell21"></div>
-  <div class="cell" onclick="handleMove(2, 2)" id="cell22"></div>
-</div>
-<script>
-  let player = 'O';
-  let enemy = 'X';
-  let currentPlayer = player;
-  let board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-  ];
+    <header>
+        <h1>Pengenalan Diri</h1>
+        <p>Muh Ikhsan H</p>
+        </div>
+    </header>
 
-  function handleMove(row, col) {
-    if (!board[row][col]) {
-      document.getElementById(`cell${row}${col}`).innerText = player;
-      board[row][col] = player;
-      if (checkWin(player)) {
-        showAlert("Anda menang!");
-        resetBoard();
-      } else if (checkDraw()) {
-        showAlert("Seri!");
-        resetBoard();
-      } else {
-        currentPlayer = enemy;
-        makeEnemyMove();
-      }
-    }
-  }
+    <!-- Tentang Saya -->
+    <section id="about">
+        <h2>Tentang Saya</h2>
+        <p>Saya adalah seorang Mahasiswa di Universitas Sahid, saya kuliah di jurusan informatika dan saya suka bahasa pemograman python, c++.</p>
+    </section>
 
-  function makeEnemyMove() {
-    let bestScore = -Infinity;
-    let move;
-    for (let i = 0; i < 3; i++) {
-      for (let j = 0; j < 3; j++) {
-        if (board[i][j] === '') {
-          board[i][j] = enemy;
-          let score = minimax(board, 0, false);
-          board[i][j] = '';
-          if (score > bestScore) {
-            bestScore = score;
-            move = { i, j };
-          }
-        }
-      }
-    }
-    board[move.i][move.j] = enemy;
-    document.getElementById(`cell${move.i}${move.j}`).innerText = enemy;
-    if (checkWin(enemy)) {
-      showAlert("Anda kalah!");
-      resetBoard();
-    } else if (checkDraw()) {
-      showAlert("Seri!");
-      resetBoard();
-    } else {
-      currentPlayer = player;
-    }
-  }
+    <!-- Pengalaman Kerja -->
+    <section id="experience">
+        <h2>Pengalaman Projek</h2>
+        <div class="job">
+            <h3>Python</h3>
 
-  function minimax(board, depth, isMaximizing) {
-    let result = checkResult();
-    if (result !== null) {
-      return result === player ? -10 + depth : result === enemy ? 10 - depth : 0;
-    }
+            <ul>
+                <li>Projek pertama Saya di python adalah membuat program otomatis klik dan mengetik di python dan deteksi gambar di python dengan cara sederhana.</li>
+                <li>Saya juga mempelajari cara membuat GUI di python menggunakan tkinter.</li>
+                <li>Saya juga mempelajari cara scrapping website di python dengan requests.</li>
+                <li>Saya juga mempelajari Backend dan API di python menggunakan Framework Flask.</li>
+                <li>Saya juga mempelajari socket di python yang bisa terhubung sesama wifi.</li>
+                <li>Saya juga mempelajari pygame di python untuk game sederhana seperti ular.</li>
+                <li>Saya juga mempelajari module terjemahan di python yang bisa menerjemahkan.</li>
+                <li>Saya juga mempelajari hacking game di python yang menggunakan offset dan pointer.</li>
+                <li>Saya juga mempelajari Computer Vision di Python.</li>
+                <li>Saya juga memepelajari cara membuat telegram bot dan discord bot di python</li>
+                <li>Saya juga mempelajari cara melatih dataset untuk deteksi gambar di YOLO untuk deteksi gambar dengan dataset.</li>
+                <li>Saya juga mempelajari machine learning regresi linear dan logistic.</li>
+            </ul>
+            <h3>C++</h3>
+            <ul>
+                <li>Saya juga mempelajari cara mengetik dan mengklik di C++</li>
+                <li>Saya juga memepelajari GUI di C++</li>
+                <li>Saya juga memepelajari cara membuat Trojan keylogger di C++ yang bisa menyamar untuk keperluan belajar.</li>
+            </ul>
+            <h3>C#</h3>
+            <ul>
+                <li>Saya hanya memepelajari hacking game di C# tapi berhenti belajar karena laptop terlalu panas.</li>
+            </ul>
+            <h3>JavaScript</h3>
+            <li>Saya pernah membuat projek Whatsapp bot di JavaScript</li>
+            <li>Saya pernah membuat projek Youtube Downloader di JavaScript</li>
+            <li>Saya pernah membuat projek Instagram Downloader di JavaScript</li>
+            <li>Saya pernah membuat projek mengirim/download file sesama wifi dengan mudah di JavaScript</li>
+            <h3>Assembly x86 atau 32 bit</h3>
+            <ul>
+                <li>Saya pernah mempelajari assembly untuk keperluan hacking game.</li>
+                <li>Saya memahami mov eax 4 untuk syscall write di assembly.</li>
+                <li>Saya memahami mov eax 3 untuk syscall read di assembly.</li>
+                <li>Saya memahami AL BL untuk menjumlahkan register di assembly.</li>
+                <li>Saya memahami CMP untuk membandingkan di assembly.</li>
+                <li>Saya memahami JMP untuk melompat di assembly.</li>
+                <li>Saya memahami CALL untuk memanggil fungsi di assembly.</li>
+                <li>Saya memahami JE (jump equal) atau semacamnya untuk conditional jump di assembly.</li>
+            </ul>
+            <br>
+            masih banyak hal yang belum bisa saya ungkapkan...
+        </div>
+        
+    </section>
 
-    if (isMaximizing) {
-      let bestScore = -Infinity;
-      for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-          if (board[i][j] === '') {
-            board[i][j] = enemy;
-            let score = minimax(board, depth + 1, false);
-            board[i][j] = '';
-            bestScore = Math.max(score, bestScore);
-          }
-        }
-      }
-      return bestScore;
-    } else {
-      let bestScore = Infinity;
-      for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-          if (board[i][j] === '') {
-            board[i][j] = player;
-            let score = minimax(board, depth + 1, true);
-            board[i][j] = '';
-            bestScore = Math.min(score, bestScore);
-          }
-        }
-      }
-      return bestScore;
-    }
-  }
+    <!-- Pendidikan -->
+    <section id="education">
+        <h2>Pendidikan</h2>
+        <div class="education-item">
+            <p>SMK jurusan Multimedia</p>
+            <p>Kuliah jurusan Informatika</p>
+        </div>
+        <!-- Tambahkan pendidikan lainnya -->
+    </section>
 
-  function checkWin(symbol) {
-    for (let i = 0; i < 3; i++) {
-      if (board[i][0] === symbol && board[i][1] === symbol && board[i][2] === symbol) {
-        return true; // horizontal win
-      }
-      if (board[0][i] === symbol && board[1][i] === symbol && board[2][i] === symbol) {
-        return true; // vertical win
-      }
-    }
-    if (board[0][0] === symbol && board[1][1] === symbol && board[2][2] === symbol) {
-      return true; // diagonal win
-    }
-    if (board[0][2] === symbol && board[1][1] === symbol && board[2][0] === symbol) {
-      return true; // diagonal win
-    }
-    return false;
-  }
+    <!-- Keterampilan -->
+    <section id="skills">
+        <h2>Keterampilan Favorit</h2>
+        <ul>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Assembly</li>
+            <!-- Tambahkan keterampilan lainnya -->
+        </ul>
+    </section>
 
-  function checkDraw() {
-    return board.every(row => row.every(cell => cell !== ''));
-  }
+    <!-- Kontak -->
+    <section id="contact">
+        <h2>Kontak</h2>
+        <p>Email: email@example.com</p>
+    </section>
 
-  function resetBoard() {
-    board = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-    ];
-    currentPlayer = player;
-    document.querySelectorAll('.cell').forEach(cell => cell.innerText = '');
-  }
-
-  function checkResult() {
-    if (checkWin(player)) return player;
-    if (checkWin(enemy)) return enemy;
-    if (checkDraw()) return 'draw';
-    return null;
-  }
-
-  function showAlert(message) {
-    alert(message);
-  }
-</script>
 </body>
 </html>
